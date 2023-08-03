@@ -1,5 +1,6 @@
 <template>
   <div>
+    <script src="https://example.com" />
     {{ foo }}
   </div>
 </template>
