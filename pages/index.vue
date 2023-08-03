@@ -1,11 +1,18 @@
 <template>
-  <Tutorial/>
+  <div>
+    {{ foo }}
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'IndexPage'
+  name: 'IndexPage',
+  methods: {
+    foo(bar: string) {
+      return bar;
+    }
+  }
 })
 </script>
