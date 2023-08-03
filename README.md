@@ -1,69 +1,14 @@
 # webstorm-vue-ts
 
-## Build Setup
+Minimal reproduction to demonstrate a bug in WebStorm 2023.2 with TypeScript in Vue templates.
 
-```bash
-# install dependencies
-$ npm install
+When a &lt;script&gt; tag appears inside the &lt;template&gt; section of a Vue single file component,
+the actual component script is treated as vanilla JS by WebStorm.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+### ❌ With script in template:
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+![Screenshot](https://uccf6601d08713c5ee5eff4637d5.previews.dropboxusercontent.com/p/thumb/AB-o6Vclbf0p4wpwEGpY4LHEIZCx8IpfhNPTRH6rQQSMaxYzO4nKMy9fgqd9GZAynv4NJMtcrfvn5TbIU-Mjd3iv-Rtkf7d2rGEx6WvbqW0ahRGGVMDp1g7CDEGShvEATEW4n2eK2ibHXvngblWCGUXCsh9mZJVUZ_I4ff1Egc51uW1aq3HceGh5trGOevnw8WwRwSTxQjLrMbLvkuRbpPCKObdwA7A7W94852ZrSX3MwCTULEeXtSUfhd3Cfr1TwRoPmatlFpnHo7YGCy6tFjf_DM0o8-NJFzBSghAvFYGBAuDoCTEvLT6w7fJBarCxopGkSnQA2X0lqW6_bLGxyBYWcFq-IlZyjuCkWA-9AbH7sw/p.png)
 
-# generate static project
-$ npm run generate
-```
+### ✅ Without script in template:
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+![Screenshot](https://uc7f1910ae12158f988995815fdb.previews.dropboxusercontent.com/p/thumb/AB80uoBqB6IqHAVY7glhxOL1cs-kEGDW_WDIUps4UoM0ZmTbKBSaOh8Wpqu4drCaFc-3vQMeAkIvmiTUQ2y2J1YIwe4uWgYg6YAyQBjJ25hN0jJ8zw6vqPINbb-y69iX7QeHdbGtu9uo_NTqFy167KbIYd4cKWgNFXM_ivr79qnl2wTw7uze6auQnUbj_vLsuJrAJ57CcPncQWRSKmKVpi_2r-MDB5JsK_5sfUK_Glvl_P_ofds-QPnJuYGbWrGy8cv1_hgkksuoO06H-MrRt_XziVHBlXSevICEY3cgnVUZMALSJTaiH9h8mNkwg7iy6voEDFVa38P067tG6GElwj9f7SEWNenrIJFTIKqBrLmGXQ/p.png)
